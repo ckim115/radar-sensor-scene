@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="model" />
+	<param name= "robot_description" textfile="$(find vehicle_and_obj)/urdf/robot.urdf" />
+	<param name= "obj_description_1" textfile="$(find vehicle_and_obj)/urdf/object.urdf" />
+	<param name= "obj_description_2" textfile="$(find vehicle_and_obj)/urdf/object_2.urdf" />
+	
+	<node pkg="tf2_ros" type="static_transform_publisher" name="obj_broadcaster" args="1 0 0 0 0 0 1 world base_link1" />
+
+	<node pkg="tf2_ros" type="static_transform_publisher" name="obj2_broadcaster" args="3 0 0 0 0 0 1 world base_link2" />
+
+	<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_dd_model_pkg)/robot.rviz" required="true" />
+
+	<node pkg="vehicle_and_obj" type="node" args="/robot_description" name="robot_description" />
+
+</launch>
+	

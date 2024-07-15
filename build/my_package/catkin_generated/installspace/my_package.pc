@@ -1,0 +1,8 @@
+prefix=/Users/christina/sim_env/install
+
+Name: my_package
+Description: Description of my_package
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
