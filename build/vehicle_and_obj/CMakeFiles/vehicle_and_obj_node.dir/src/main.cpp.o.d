@@ -1849,6 +1849,9 @@ vehicle_and_obj/CMakeFiles/vehicle_and_obj_node.dir/src/main.cpp.o: \
   /Users/christina/miniconda3/envs/ROS/include/tf2/LinearMath/MinMax.h \
   /Users/christina/miniconda3/envs/ROS/include/tf2/LinearMath/QuadWord.h \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Twist.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/PoseStamped.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Pose.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Point.h \
   /Users/christina/miniconda3/envs/ROS/include/robot_state_publisher/robot_state_publisher.h \
   /Users/christina/miniconda3/envs/ROS/include/urdf/model.h \
   /Users/christina/miniconda3/envs/ROS/include/urdf_model/model.h \

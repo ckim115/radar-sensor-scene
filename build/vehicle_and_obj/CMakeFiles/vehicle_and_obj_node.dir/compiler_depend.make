@@ -1882,6 +1882,7 @@ vehicle_and_obj/CMakeFiles/vehicle_and_obj_node.dir/src/Sim_Node.cpp.o: /Users/c
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Pose.h \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Point.h \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/TwistWithCovariance.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/PoseStamped.h \
   /Users/christina/sim_env/src/vehicle_and_obj/include/vehicle_and_obj/Sim_Node.h \
   /Users/christina/miniconda3/envs/ROS/include/std_msgs/String.h
 
@@ -3735,6 +3736,9 @@ vehicle_and_obj/CMakeFiles/vehicle_and_obj_node.dir/src/main.cpp.o: /Users/chris
   /Users/christina/miniconda3/envs/ROS/include/tf2/LinearMath/MinMax.h \
   /Users/christina/miniconda3/envs/ROS/include/tf2/LinearMath/QuadWord.h \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Twist.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/PoseStamped.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Pose.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Point.h \
   /Users/christina/miniconda3/envs/ROS/include/robot_state_publisher/robot_state_publisher.h \
   /Users/christina/miniconda3/envs/ROS/include/urdf/model.h \
   /Users/christina/miniconda3/envs/ROS/include/urdf_model/model.h \
@@ -4372,6 +4376,8 @@ vehicle_and_obj/CMakeFiles/vehicle_and_obj_node.dir/src/main.cpp.o: /Users/chris
 /Users/christina/miniconda3/envs/ROS/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
 
 /Users/christina/miniconda3/envs/ROS/include/boost/numeric/conversion/detail/sign_mixture.hpp:
+
+/Users/christina/miniconda3/envs/ROS/include/geometry_msgs/PoseStamped.h:
 
 /Users/christina/miniconda3/envs/ROS/include/boost/mpl/integral_c_fwd.hpp:
 

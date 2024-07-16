@@ -7,6 +7,7 @@
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <geometry_msgs/Twist.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <robot_state_publisher/robot_state_publisher.h>
 
 class Sim_Node
@@ -27,8 +28,8 @@ private:
     ros::Publisher _publisher;
     // Transforms
     tf2_ros::TransformBroadcaster tfb;
-    geometry_msgs::TransformStamped transformStamped;
-    geometry_msgs::TransformStamped wheelTransforms;
+    geometry_msgs::PoseStamped poseStamped;
+    geometry_msgs::Twist twist;
     double linear_x = 0;
     double linear_y = 0;
     double linear_z = 0;

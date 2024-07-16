@@ -2,6 +2,7 @@
 #include <sstream>
 #include <ros/ros.h>
 #include <tf2_ros/transform_broadcaster.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <visualization_msgs/Marker.h>
 #include <tf2_msgs/TFMessage.h>
@@ -269,14 +270,14 @@ void callback_obj(const tf2_msgs::TFMessage msg)
 }
 
 // Print coordinates and rotation of vehicle
-void callback_vehicle(const geometry_msgs::TransformStamped msg)
+void callback_vehicle(const geometry_msgs::PoseStamped msg)
 {
-    vehicle.x = msg.transform.translation.x;
-    vehicle.y = msg.transform.translation.y;
-    vehicle.z = msg.transform.translation.z;
+    vehicle.x = msg.pose.position.x;
+    vehicle.y = msg.pose.position.y;
+    vehicle.z = msg.pose.position.z;
     
     // convert to Euler; need to make new quaternion for this
-    tf2::Quaternion q(msg.transform.rotation.x, msg.transform.rotation.y, msg.transform.rotation.z, msg.transform.rotation.w);
+    tf2::Quaternion q(msg.pose.orientation.x, msg.pose.orientation.y, msg.pose.orientation.z, msg.pose.orientation.w);
     // get angle for orientation
     vehicle.orientation = q.getAngle();
     

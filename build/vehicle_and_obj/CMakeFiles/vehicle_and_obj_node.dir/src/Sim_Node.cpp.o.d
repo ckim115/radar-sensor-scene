@@ -1880,5 +1880,6 @@ vehicle_and_obj/CMakeFiles/vehicle_and_obj_node.dir/src/Sim_Node.cpp.o: \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Pose.h \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/Point.h \
   /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/TwistWithCovariance.h \
+  /Users/christina/miniconda3/envs/ROS/include/geometry_msgs/PoseStamped.h \
   /Users/christina/sim_env/src/vehicle_and_obj/include/vehicle_and_obj/Sim_Node.h \
   /Users/christina/miniconda3/envs/ROS/include/std_msgs/String.h
