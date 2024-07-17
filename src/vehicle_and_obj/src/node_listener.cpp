@@ -22,12 +22,17 @@ struct Vehicle
     double orientation {};
 };
 
+struct Plane
+{
+    double x {}, y {}, z {};
+};
+
 struct Obstacle
 {
     double w {}, l {}, h {}; //w l h
     double x {}, y {}, z {};
+    std::vector<Plane> planes {};
 };
-
 struct Random_Point
 {
     double x {}, y {}, z {};
@@ -67,13 +72,23 @@ void generate_marker() {
 
 //With a dot product, if we treat the two vectors as directions, then a value less than 0 means that v1 is behind v2
 double in_view(std::vector<double> v1, std::vector<double> v2) {
-    double v1_length = sqrt(pow(v1[0],2)+pow(v1[1],2));
-    double v2_length = sqrt(pow(v2[0],2)+pow(v2[1],2));
     //unitize the vectors to get direction vectors
-    std::vector<double> new_v1 = {v1_length*v1[0],v1_length*v1[1]};
-    std::vector<double> new_v2 = {v2_length*v2[0],v2_length*v2[1]};
-    //if dotProduct > 0, then we know that our vehicle is facing the object
+    double length = 0;
+    for(double i : v1) length += pow(i,2);
+    length = sqrt(length);
+    std::vector<double> new_v1{};
+    for(double i : v1) new_v1.push_back(i/length);
+    ROS_INFO("vehicle_v: <%f, %f, %f>", v1[0], v1[1], v1[2]);
+    
+    length = 0;
+    for(double i : v2) length += pow(i,2);
+    length = sqrt(length);
+    std::vector<double> new_v2{};
+    for(double i : v2) new_v2.push_back(i/length);
+    ROS_INFO("plane_v: <%f, %f, %f>", v2[0], v2[1], v2[2]);
+    
     double dotProduct = inner_product(new_v1.begin(), new_v1.end(), new_v2.begin(), 0);
+    ROS_INFO("Dot Prod: %f", dotProduct);
     return dotProduct;
 }
 
@@ -86,112 +101,39 @@ int gen_pos_or_neg() {
     }
 }
 
-void gen_rand_num(Obstacle o, bool x, bool y) {
-    // randomly generate a point on the SA of the object
+void gen_rand_num(Obstacle o, Plane p) {
     std::default_random_engine re{std::random_device{}()};
-    std::uniform_real_distribution<double> genz(0, o.h/2);
-    std::uniform_real_distribution<double> geny(0, o.l/2);
-    std::uniform_real_distribution<double> genx(0, o.w/2);
-    
-    int num_gen = rand()%2;
-    int param_gen = rand()%3;
-    
-    if(num_gen == 0) {
-        if(x && y) {// if it can be either x or y
-            if(param_gen == 1) {
-                rand_pt.x = gen_pos_or_neg()*genx(re) + o.x;
-            } else if(param_gen == 2) {
-                rand_pt.y = gen_pos_or_neg()*geny(re) + o.y;
-            } else {
-                rand_pt.z = gen_pos_or_neg()*genz(re) + o.z;
-            }
-        } else { // if it can only be x or only be y
-            if(gen_pos_or_neg() > 0) {
-                if(x) {
-                    rand_pt.x = gen_pos_or_neg()*genx(re) + o.x;
-                } else {
-                    rand_pt.y = gen_pos_or_neg()*geny(re) + o.y;
-                }
-            } else {
-                rand_pt.z = gen_pos_or_neg()*genz(re) + o.z;
-            }
-        }
-        // x or y or z
-    } else { // z and (x or y)
-        rand_pt.z = gen_pos_or_neg()*genz(re) + o.z;
-        if(x && y) { // if it can be either
-            if(gen_pos_or_neg() > 0) { // choose x
-                rand_pt.x = gen_pos_or_neg()*genx(re) + o.x;
-            } else { // choose y
-                rand_pt.y = gen_pos_or_neg()*geny(re) + o.y;
-            }
-        } else if(x) {
-            rand_pt.x = gen_pos_or_neg()*genx(re) + o.x;
-        } else {
-            rand_pt.y = gen_pos_or_neg()*geny(re) + o.y;
-        }
+    std::uniform_real_distribution<double> genx(o.x - o.w/2, o.x + o.w/2);
+    std::uniform_real_distribution<double> geny(o.y - o.l/2, o.y + o.l/2);
+    std::uniform_real_distribution<double> genz(-o.h/2, o.h/2);
+    rand_pt.x = p.x; // at nearest edge NOT o.x
+    rand_pt.y = p.y;
+    rand_pt.z = p.z;
+    if(p.x == o.x+o.w/2 || p.x == o.x-o.w/2) {
+        rand_pt.y = geny(re);
+        rand_pt.z = genz(re);
+    } else if (p.y == o.y+o.l/2 || p.x == o.x-o.l/2) {
+        rand_pt.x = genx(re);
+        rand_pt.z = genz(re);
+    } else {
+        rand_pt.x = genx(re);
+        rand_pt.y = geny(re);
     }
 }
 
 // defines the random points
 bool define_random_point(Obstacle o) {
-    // edge_1 -> edge_2 && edge_1 -> edge 3
-    // edge_2 -> edge_4
-    // edge 3 -> edge_4
-    
-    //edge x point shared by edges 1 and 3
-    double ex_13 = o.x+o.w/2;
-    //edge y point shared by edges 1 and 2
-    double ey_12 = o.y+o.l/2;
-    //edge x point shared by edges 2 and 4
-    double ex_24 = o.x-o.w/2;
-    //edge y point shared by edges 3 and 4
-    double ey_34 = o.y-o.l/2;
-    
-    if(vehicle.x > ex_13) {
-        rand_pt.x = ex_13;
-        if(vehicle.y > ey_12) {
-            //1 2 3 x or y or z, OR z and (x or y)
-            rand_pt.y = ey_12;
-            gen_rand_num(o, true, true);
-        } else if(vehicle.y > ey_34){
-            rand_pt.y = ey_34;
-            //can see 1 3; manipulate only z and/or y-axis
-            gen_rand_num(o, false, true);
-        } else {
-            rand_pt.y = ey_34;
-            // can see 1 3 4; x or y or z, OR z and (x or y)
-            gen_rand_num(o, true, true);
-        }
-    } else if(vehicle.x > ex_24) {
-        rand_pt.x = ex_24;
-        if(vehicle.y > ey_12) {
-            // can see 1 2; manipulate only z and/or x-axis
-            rand_pt.y = ey_12;
-            gen_rand_num(o, true, false);
-        } else if(vehicle.y < ey_34) {
-            // can see 3 4; manipulate only z and/or x-axis
-            rand_pt.y = ey_34;
-            gen_rand_num(o, true, false);
-        } else {
-            return false; // means it is inside the object
-        }
-    } else {
-        rand_pt.x = ex_24;
-        if(vehicle.y > ey_12) {
-            // can see 1 2 4; x or y or z, OR z and (x or y)
-            rand_pt.y = ey_12;
-            gen_rand_num(o, true, true);
-        } else if(vehicle.y > ey_34) {
-            rand_pt.y = ey_34;
-            // can see 2 4; manipulate only z and/or y-axis
-            gen_rand_num(o, false, true);
-        } else {
-            rand_pt.y = ey_34;
-            // can see 2 4 3; x or y or z, OR z and (x or y)
-            gen_rand_num(o, true, true);
-        }
+    std::vector<Plane> visible_planes {};
+    std::vector<double> vehicle_v = {cos(vehicle.orientation), sin(vehicle.orientation), 0};
+    ROS_INFO("start");
+    std::vector<double> plane_v;
+    for(Plane p: o.planes) {
+        plane_v = {p.x - o.x, p.y - o.y, p.z - o.z};
+        if(in_view(vehicle_v, plane_v) < 0) visible_planes.push_back(p);
     }
+    if(visible_planes.empty()) return false;
+    int randIndex = rand()%visible_planes.size();
+    gen_rand_num(o, visible_planes[randIndex]);
     return true;
 }
 
@@ -228,7 +170,7 @@ bool rand_point() {
         double min_distance = std::numeric_limits<double>::max();
         for(Obstacle o : obstacles) {
             // vector of object; always points towards vehicle
-            obj_v = {o.x-vehicle.x, o.y-vehicle.y};
+            obj_v = {vehicle.x - o.x, vehicle.y - o.y};
             temp_distance = calc_range(vehicle.x, vehicle.y, vehicle.z, o.x, o.y, o.z);
             if(temp_distance <= min_distance && in_view(vehicle_v, obj_v) >= 0) {
                 minObs = o;
@@ -265,6 +207,17 @@ void callback_obj(const tf2_msgs::TFMessage msg)
         box = std::dynamic_pointer_cast<urdf::Box> (link->visual->geometry);
         
         Obstacle obs {box->dim.x, box->dim.y, box->dim.z, static_tf.transform.translation.x, static_tf.transform.translation.y, static_tf.transform.translation.z};
+        
+        for(int i = -1; i < 2; i+=2) {
+            obs.planes.push_back(Plane{obs.x+i*obs.w*0.5,obs.y,obs.z});
+            obs.planes.push_back(Plane{obs.x,obs.y+i*obs.l*0.5,obs.z});
+        }
+        //cant see bottom (ground)
+        //for case of top of object
+        if(vehicle.z >= obs.z+obs.h*0.5) obs.planes.push_back(Plane{obs.x,obs.y,obs.z+obs.h*0.5});
+        
+        ROS_INFO("object position: (%f, %f, %f)", obs.x, obs.y, obs.z);
+        
         obstacles.push_back(obs);
     }
 }
