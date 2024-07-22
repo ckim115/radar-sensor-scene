@@ -17,6 +17,20 @@
 //Build dynamically-linked binaries
 BUILD_SHARED_LIBS:BOOL=ON
 
+Boost_DATE_TIME_LIBRARY_RELEASE:STRING=/Users/christina/miniconda3/envs/ROS/lib/libboost_date_time.dylib
+
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Boost-1.78.0
+
+Boost_FILESYSTEM_LIBRARY_RELEASE:STRING=/Users/christina/miniconda3/envs/ROS/lib/libboost_filesystem.dylib
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
+
+Boost_IOSTREAMS_LIBRARY_RELEASE:STRING=/Users/christina/miniconda3/envs/ROS/lib/libboost_iostreams.dylib
+
+Boost_SYSTEM_LIBRARY_RELEASE:STRING=/Users/christina/miniconda3/envs/ROS/lib/libboost_system.dylib
+
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
@@ -253,8 +267,53 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Path to a program.
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
+//Path to a file.
+EIGEN_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/eigen3
+
 //Empy script
 EMPY_SCRIPT:STRING=/Users/christina/miniconda3/envs/ROS/lib/python3.9/site-packages/em.py
+
+//Path to a file.
+EXPAT_INCLUDE_DIR:PATH=/Library/Frameworks/Mono.framework/Headers
+
+//Path to a library.
+EXPAT_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libexpat.dylib
+
+//Eigen include directory
+Eigen3_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/eigen3
+
+//Path to a file.
+FLANN_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
+
+//Path to a library.
+FLANN_LIBRARY_DEBUG_SHARED:FILEPATH=FLANN_LIBRARY_DEBUG_SHARED-NOTFOUND
+
+//Path to a library.
+FLANN_LIBRARY_DEBUG_STATIC:FILEPATH=FLANN_LIBRARY_DEBUG_STATIC-NOTFOUND
+
+//Path to a library.
+FLANN_LIBRARY_SHARED:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libflann_cpp.dylib
+
+//Path to a library.
+FLANN_LIBRARY_STATIC:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libflann_cpp_s.a
+
+//Path to a file.
+FREETYPE_INCLUDE_DIR_freetype2:PATH=/Users/christina/miniconda3/envs/ROS/include/freetype2
+
+//Path to a file.
+FREETYPE_INCLUDE_DIR_ft2build:PATH=/Library/Frameworks/Mono.framework/Headers
+
+//Path to a library.
+FREETYPE_LIBRARY_DEBUG:FILEPATH=FREETYPE_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+FREETYPE_LIBRARY_RELEASE:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libfreetype.dylib
+
+//glew include directory
+GLEW_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
+
+//glew library
+GLEW_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libGLEW.dylib
 
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
@@ -262,11 +321,236 @@ GMock_DIR:PATH=GMock_DIR-NOTFOUND
 //The directory containing a CMake configuration file for GTest.
 GTest_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/GTest
 
+//Path to a file.
+JPEG_INCLUDE_DIR:PATH=/Library/Frameworks/Mono.framework/Headers
+
+//Path to a library.
+JPEG_LIBRARY_DEBUG:FILEPATH=JPEG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+JPEG_LIBRARY_RELEASE:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libjpeg.dylib
+
 //Path to a program.
 LSB_RELEASE_EXECUTABLE:FILEPATH=LSB_RELEASE_EXECUTABLE-NOTFOUND
 
+//lz4 include directory
+LZ4_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
+
+//lz4 library
+LZ4_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/liblz4.dylib
+
+//lzma include directory
+LZMA_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
+
+//lzma library
+LZMA_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/liblzma.dylib
+
 //Path to a program.
 NOSETESTS:FILEPATH=/Users/christina/miniconda3/envs/ROS/bin/nosetests-3.9
+
+//Include for OpenGL on OS X
+OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
+
+//OpenGL library for OS X
+OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
+
+//GLU library for OS X (usually same as OpenGL library)
+OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
+
+//path to 2d headers
+PCL_2D_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to common headers
+PCL_COMMON_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_common library
+PCL_COMMON_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_common.dylib
+
+//path to pcl_common library debug
+PCL_COMMON_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_common.dylib
+
+//The directory containing a CMake configuration file for PCL.
+PCL_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/pcl-1.12
+
+//path to features headers
+PCL_FEATURES_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_features library
+PCL_FEATURES_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_features.dylib
+
+//path to pcl_features library debug
+PCL_FEATURES_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_features.dylib
+
+//path to filters headers
+PCL_FILTERS_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_filters library
+PCL_FILTERS_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_filters.dylib
+
+//path to pcl_filters library debug
+PCL_FILTERS_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_filters.dylib
+
+//path to geometry headers
+PCL_GEOMETRY_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to io headers
+PCL_IO_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_io library
+PCL_IO_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_io.dylib
+
+//path to pcl_io library debug
+PCL_IO_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_io.dylib
+
+//path to kdtree headers
+PCL_KDTREE_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_kdtree library
+PCL_KDTREE_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_kdtree.dylib
+
+//path to pcl_kdtree library debug
+PCL_KDTREE_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_kdtree.dylib
+
+//path to keypoints headers
+PCL_KEYPOINTS_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_keypoints library
+PCL_KEYPOINTS_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_keypoints.dylib
+
+//path to pcl_keypoints library debug
+PCL_KEYPOINTS_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_keypoints.dylib
+
+//path to ml headers
+PCL_ML_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_ml library
+PCL_ML_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_ml.dylib
+
+//path to pcl_ml library debug
+PCL_ML_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_ml.dylib
+
+//path to octree headers
+PCL_OCTREE_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_octree library
+PCL_OCTREE_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_octree.dylib
+
+//path to pcl_octree library debug
+PCL_OCTREE_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_octree.dylib
+
+//path to outofcore headers
+PCL_OUTOFCORE_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_outofcore library
+PCL_OUTOFCORE_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_outofcore.dylib
+
+//path to pcl_outofcore library debug
+PCL_OUTOFCORE_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_outofcore.dylib
+
+//path to people headers
+PCL_PEOPLE_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_people library
+PCL_PEOPLE_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_people.dylib
+
+//path to pcl_people library debug
+PCL_PEOPLE_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_people.dylib
+
+//path to recognition headers
+PCL_RECOGNITION_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_recognition library
+PCL_RECOGNITION_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_recognition.dylib
+
+//path to pcl_recognition library debug
+PCL_RECOGNITION_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_recognition.dylib
+
+//path to registration headers
+PCL_REGISTRATION_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_registration library
+PCL_REGISTRATION_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_registration.dylib
+
+//path to pcl_registration library debug
+PCL_REGISTRATION_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_registration.dylib
+
+//path to sample_consensus headers
+PCL_SAMPLE_CONSENSUS_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_sample_consensus library
+PCL_SAMPLE_CONSENSUS_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_sample_consensus.dylib
+
+//path to pcl_sample_consensus library debug
+PCL_SAMPLE_CONSENSUS_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_sample_consensus.dylib
+
+//path to search headers
+PCL_SEARCH_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_search library
+PCL_SEARCH_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_search.dylib
+
+//path to pcl_search library debug
+PCL_SEARCH_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_search.dylib
+
+//path to segmentation headers
+PCL_SEGMENTATION_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_segmentation library
+PCL_SEGMENTATION_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_segmentation.dylib
+
+//path to pcl_segmentation library debug
+PCL_SEGMENTATION_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_segmentation.dylib
+
+//path to stereo headers
+PCL_STEREO_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_stereo library
+PCL_STEREO_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_stereo.dylib
+
+//path to pcl_stereo library debug
+PCL_STEREO_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_stereo.dylib
+
+//path to surface headers
+PCL_SURFACE_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_surface library
+PCL_SURFACE_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_surface.dylib
+
+//path to pcl_surface library debug
+PCL_SURFACE_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_surface.dylib
+
+//path to tracking headers
+PCL_TRACKING_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_tracking library
+PCL_TRACKING_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_tracking.dylib
+
+//path to pcl_tracking library debug
+PCL_TRACKING_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_tracking.dylib
+
+//path to visualization headers
+PCL_VISUALIZATION_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/pcl-1.12
+
+//path to pcl_visualization library
+PCL_VISUALIZATION_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_visualization.dylib
+
+//path to pcl_visualization library debug
+PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpcl_visualization.dylib
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/Users/christina/miniconda3/envs/ROS/bin/pkg-config
+
+//Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libpng.dylib
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=/Library/Frameworks/Mono.framework/Headers
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/Users/christina/miniconda3/envs/ROS/bin/python3.9
@@ -286,11 +570,50 @@ Project_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/Users/christina/sim_env/src
 
+//The directory containing a CMake configuration file for Qhull.
+Qhull_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Qhull
+
+//The directory containing a CMake configuration file for Qt5Core.
+Qt5Core_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Qt5Core
+
+//The directory containing a CMake configuration file for Qt5Gui.
+Qt5Gui_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Qt5Gui
+
+//The directory containing a CMake configuration file for Qt5OpenGL.
+Qt5OpenGL_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Qt5OpenGL
+
+//The directory containing a CMake configuration file for Qt5Widgets.
+Qt5Widgets_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Qt5Widgets
+
+//The directory containing a CMake configuration file for Qt5.
+Qt5_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/Qt5
+
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=OFF
 
 //Name of the computer/site where compile is being run
 SITE:STRING=MacBook-Air-5.local
+
+//Path to a file.
+TIFF_INCLUDE_DIR:PATH=/Library/Frameworks/Mono.framework/Headers
+
+//Path to a library.
+TIFF_LIBRARY_DEBUG:FILEPATH=TIFF_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+TIFF_LIBRARY_RELEASE:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libtiff.dylib
+
+//The directory containing VTKConfig.cmake
+VTK_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/vtk-9.2
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libz.dylib
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=_gmock_INCLUDES-NOTFOUND
@@ -310,6 +633,30 @@ actionlib_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/actionlib_msgs/cmake
 
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/bondcpp/cmake
+
+//The directory containing a CMake configuration file for boost_atomic.
+boost_atomic_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/boost_atomic-1.78.0
+
+//The directory containing a CMake configuration file for boost_date_time.
+boost_date_time_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/boost_date_time-1.78.0
+
+//The directory containing a CMake configuration file for boost_filesystem.
+boost_filesystem_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/boost_filesystem-1.78.0
+
+//The directory containing a CMake configuration file for boost_headers.
+boost_headers_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/boost_headers-1.78.0
+
+//The directory containing a CMake configuration file for boost_iostreams.
+boost_iostreams_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/boost_iostreams-1.78.0
+
+//The directory containing a CMake configuration file for boost_system.
+boost_system_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/boost_system-1.78.0
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/catkin/cmake
 
@@ -318,6 +665,18 @@ class_loader_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/class_loader/cm
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/cpp_common/cmake
+
+//double-conversion include directory
+double-conversion_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include/double-conversion
+
+//double-conversion library
+double-conversion_LIBRARY:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libdouble-conversion.dylib
+
+//The directory containing a CMake configuration file for dynamic_reconfigure.
+dynamic_reconfigure_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/dynamic_reconfigure/cmake
+
+//The directory containing a CMake configuration file for flann.
+flann_DIR:PATH=flann_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/gencpp/cmake
@@ -344,7 +703,7 @@ geometry_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/geometry_msgs/
 joint_state_publisher_gui_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/joint_state_publisher_gui/cmake
 
 //Path to a library.
-lib:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/librosconsole_bridge.dylib
+lib:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libtf.dylib
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/message_filters/cmake
@@ -364,8 +723,44 @@ my_package_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 my_package_SOURCE_DIR:STATIC=/Users/christina/sim_env/src/my_package
 
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/cmake/nlohmann_json
+
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/nodelet/cmake
+
+//The directory containing a CMake configuration file for nodelet_topic_tools.
+nodelet_topic_tools_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/nodelet_topic_tools/cmake
+
+//The directory containing a CMake configuration file for pcl_conversions.
+pcl_conversions_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/pcl_conversions/cmake
+
+//The directory containing a CMake configuration file for pcl_msgs.
+pcl_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/pcl_msgs/cmake
+
+//The directory containing a CMake configuration file for pcl_ros.
+pcl_ros_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/pcl_ros/cmake
+
+//Path to a library.
+pkgcfg_lib_PC_EXPAT_expat:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libexpat.dylib
+
+//Path to a library.
+pkgcfg_lib_PC_FLANN_flann:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libflann.dylib
+
+//Path to a library.
+pkgcfg_lib_PC_FLANN_flann_cpp:FILEPATH=/Users/christina/miniconda3/envs/ROS/lib/libflann_cpp.dylib
+
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/pluginlib/cmake
+
+//The directory containing a CMake configuration file for pugixml.
+pugixml_DIR:PATH=/Users/christina/miniconda3/envs/ROS/lib/cmake/pugixml
+
+//The directory containing a CMake configuration file for rosbag.
+rosbag_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rosbag/cmake
+
+//The directory containing a CMake configuration file for rosbag_storage.
+rosbag_storage_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rosbag_storage/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rosconsole/cmake
@@ -391,6 +786,9 @@ rosgraph_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rosgraph_msgs/
 //The directory containing a CMake configuration file for roslib.
 roslib_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/roslib/cmake
 
+//The directory containing a CMake configuration file for roslz4.
+roslz4_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/roslz4/cmake
+
 //The directory containing a CMake configuration file for rospack.
 rospack_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rospack/cmake
 
@@ -400,8 +798,17 @@ rospy_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rospy/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/rostime/cmake
 
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/sensor_msgs/cmake
+
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/smclib/cmake
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/std_msgs/cmake
+
+//The directory containing a CMake configuration file for std_srvs.
+std_srvs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/std_srvs/cmake
 
 //Value Computed by CMake
 teleop_twist_keyboard_BINARY_DIR:STATIC=/Users/christina/sim_env/build/teleop_twist_keyboard
@@ -415,6 +822,9 @@ teleop_twist_keyboard_SOURCE_DIR:STATIC=/Users/christina/sim_env/src/teleop_twis
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/tf2/cmake
 
+//The directory containing a CMake configuration file for tf2_eigen.
+tf2_eigen_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/tf2_eigen/cmake
+
 //The directory containing a CMake configuration file for tf2_geometry_msgs.
 tf2_geometry_msgs_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/tf2_geometry_msgs/cmake
 
@@ -427,8 +837,17 @@ tf2_py_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/tf2_py/cmake
 //The directory containing a CMake configuration file for tf2_ros.
 tf2_ros_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/tf2_ros/cmake
 
+//The directory containing a CMake configuration file for tf.
+tf_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/tf/cmake
+
+//The directory containing a CMake configuration file for topic_tools.
+topic_tools_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/topic_tools/cmake
+
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/urdf/cmake
+
+//utf8cpp include directory
+utf8cpp_INCLUDE_DIR:PATH=/Users/christina/miniconda3/envs/ROS/include
 
 //Value Computed by CMake
 vehicle_and_obj_BINARY_DIR:STATIC=/Users/christina/sim_env/build/vehicle_and_obj
@@ -447,6 +866,8 @@ xmlrpcpp_DIR:PATH=/Users/christina/miniconda3/envs/ROS/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/Users/christina/sim_env/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/Users/christina/sim_env/build/test_results
@@ -601,19 +1022,413 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/Users/christina/miniconda3/envs/ROS/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EIGEN_INCLUDE_DIR
+EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EXPAT_INCLUDE_DIR
+EXPAT_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EXPAT_LIBRARY
+EXPAT_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Eigen3_INCLUDE_DIR
+Eigen3_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//Details about finding Boost
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/cmake/Boost-1.78.0/BoostConfig.cmake][cfound components: system filesystem date_time iostreams ][v1.78.0(1.65.0)]
+//Details about finding EXPAT
+FIND_PACKAGE_MESSAGE_DETAILS_EXPAT:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libexpat.dylib][/Library/Frameworks/Mono.framework/Headers][v2.2.5()]
+//Details about finding Eigen
+FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/Users/christina/miniconda3/envs/ROS/include/eigen3][v(3.1)]
+//Details about finding Eigen3
+FIND_PACKAGE_MESSAGE_DETAILS_Eigen3:INTERNAL=[/Users/christina/miniconda3/envs/ROS/include/eigen3][v3.4.0()]
+//Details about finding FLANN
+FIND_PACKAGE_MESSAGE_DETAILS_FLANN:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libflann_cpp.dylib][/Users/christina/miniconda3/envs/ROS/include][v()]
+//Details about finding Freetype
+FIND_PACKAGE_MESSAGE_DETAILS_Freetype:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libfreetype.dylib][/Library/Frameworks/Mono.framework/Headers;/Users/christina/miniconda3/envs/ROS/include/freetype2][v2.12.1()]
+//Details about finding GLEW
+FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libGLEW.dylib][/Users/christina/miniconda3/envs/ROS/include][v()]
+//Details about finding JPEG
+FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libjpeg.dylib][/Library/Frameworks/Mono.framework/Headers][v80()]
+//Details about finding LZ4
+FIND_PACKAGE_MESSAGE_DETAILS_LZ4:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/liblz4.dylib][/Users/christina/miniconda3/envs/ROS/include][v1.9.4()]
+//Details about finding LZMA
+FIND_PACKAGE_MESSAGE_DETAILS_LZMA:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/liblzma.dylib][/Users/christina/miniconda3/envs/ROS/include][v5.2.6()]
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework][cfound components: OpenGL ][v()]
+//Details about finding PCL
+FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12;/Users/christina/miniconda3/envs/ROS/include/eigen3;/Users/christina/miniconda3/envs/ROS/include][v()]
+//Details about finding PCL_2D
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_2D:INTERNAL=[/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_COMMON
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_COMMON:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_common.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_FEATURES
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_FEATURES:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_features.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_FILTERS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_FILTERS:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_filters.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_GEOMETRY
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GEOMETRY:INTERNAL=[/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_IO
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_IO:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_io.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_KDTREE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_KDTREE:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_kdtree.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_KEYPOINTS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_KEYPOINTS:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_keypoints.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_ML
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_ML:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_ml.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_OCTREE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_OCTREE:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_octree.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_OUTOFCORE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_OUTOFCORE:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_outofcore.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_PEOPLE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_PEOPLE:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_people.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_RECOGNITION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_RECOGNITION:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_recognition.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_REGISTRATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_REGISTRATION:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_registration.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_SAMPLE_CONSENSUS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SAMPLE_CONSENSUS:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_sample_consensus.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_SEARCH
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SEARCH:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_search.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_SEGMENTATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SEGMENTATION:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_segmentation.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_STEREO
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_STEREO:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_stereo.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_SURFACE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SURFACE:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_surface.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_TRACKING
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_TRACKING:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_tracking.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PCL_VISUALIZATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_VISUALIZATION:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpcl_visualization.dylib][/Users/christina/miniconda3/envs/ROS/include/pcl-1.12][v()]
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libpng.dylib][/Library/Frameworks/Mono.framework/Headers][v1.4.12()]
 //Details about finding PY_em
 FIND_PACKAGE_MESSAGE_DETAILS_PY_em:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/python3.9/site-packages/em.py][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/Users/christina/miniconda3/envs/ROS/bin/python3.9][v3.9.18(3.9)]
+//Details about finding TIFF
+FIND_PACKAGE_MESSAGE_DETAILS_TIFF:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libtiff.dylib][/Library/Frameworks/Mono.framework/Headers][c ][v4.0.9()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libz.dylib][/Users/christina/miniconda3/envs/ROS/include][c ][v1.2.13()]
+//Details about finding double-conversion
+FIND_PACKAGE_MESSAGE_DETAILS_double-conversion:INTERNAL=[/Users/christina/miniconda3/envs/ROS/lib/libdouble-conversion.dylib][/Users/christina/miniconda3/envs/ROS/include/double-conversion][v()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/Users/christina/miniconda3/envs/ROS/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.11.3()]
+//Details about finding utf8cpp
+FIND_PACKAGE_MESSAGE_DETAILS_utf8cpp:INTERNAL=[/Users/christina/miniconda3/envs/ROS/include][v()]
+//ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
+FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_INCLUDE_DIR_ft2build
+FREETYPE_INCLUDE_DIR_ft2build-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_LIBRARY_DEBUG
+FREETYPE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_LIBRARY_RELEASE
+FREETYPE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLEW_INCLUDE_DIR
+GLEW_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLEW_LIBRARY
+GLEW_LIBRARY-ADVANCED:INTERNAL=1
 GTEST_BOTH_LIBRARIES:INTERNAL=GTest::gtest;GTest::gtest_main
 GTEST_FOUND:INTERNAL=TRUE
 GTEST_INCLUDE_DIRS:INTERNAL=
 GTEST_LIBRARIES:INTERNAL=GTest::gtest
 GTEST_MAIN_LIBRARIES:INTERNAL=GTest::gtest_main
+//ADVANCED property for variable: JPEG_INCLUDE_DIR
+JPEG_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: JPEG_LIBRARY_DEBUG
+JPEG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: JPEG_LIBRARY_RELEASE
+JPEG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LZ4_INCLUDE_DIR
+LZ4_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LZ4_LIBRARY
+LZ4_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_INCLUDE_DIR
+OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_2D_INCLUDE_DIR
+PCL_2D_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_COMMON_INCLUDE_DIR
+PCL_COMMON_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_COMMON_LIBRARY
+PCL_COMMON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_COMMON_LIBRARY_DEBUG
+PCL_COMMON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FEATURES_INCLUDE_DIR
+PCL_FEATURES_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FEATURES_LIBRARY
+PCL_FEATURES_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FEATURES_LIBRARY_DEBUG
+PCL_FEATURES_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FILTERS_INCLUDE_DIR
+PCL_FILTERS_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FILTERS_LIBRARY
+PCL_FILTERS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FILTERS_LIBRARY_DEBUG
+PCL_FILTERS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GEOMETRY_INCLUDE_DIR
+PCL_GEOMETRY_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_IO_INCLUDE_DIR
+PCL_IO_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_IO_LIBRARY
+PCL_IO_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_IO_LIBRARY_DEBUG
+PCL_IO_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KDTREE_INCLUDE_DIR
+PCL_KDTREE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KDTREE_LIBRARY
+PCL_KDTREE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KDTREE_LIBRARY_DEBUG
+PCL_KDTREE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KEYPOINTS_INCLUDE_DIR
+PCL_KEYPOINTS_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KEYPOINTS_LIBRARY
+PCL_KEYPOINTS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KEYPOINTS_LIBRARY_DEBUG
+PCL_KEYPOINTS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_ML_INCLUDE_DIR
+PCL_ML_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_ML_LIBRARY
+PCL_ML_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_ML_LIBRARY_DEBUG
+PCL_ML_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OCTREE_INCLUDE_DIR
+PCL_OCTREE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OCTREE_LIBRARY
+PCL_OCTREE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OCTREE_LIBRARY_DEBUG
+PCL_OCTREE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OUTOFCORE_INCLUDE_DIR
+PCL_OUTOFCORE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OUTOFCORE_LIBRARY
+PCL_OUTOFCORE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OUTOFCORE_LIBRARY_DEBUG
+PCL_OUTOFCORE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_PEOPLE_INCLUDE_DIR
+PCL_PEOPLE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_PEOPLE_LIBRARY
+PCL_PEOPLE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_PEOPLE_LIBRARY_DEBUG
+PCL_PEOPLE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_RECOGNITION_INCLUDE_DIR
+PCL_RECOGNITION_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_RECOGNITION_LIBRARY
+PCL_RECOGNITION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_RECOGNITION_LIBRARY_DEBUG
+PCL_RECOGNITION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_REGISTRATION_INCLUDE_DIR
+PCL_REGISTRATION_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_REGISTRATION_LIBRARY
+PCL_REGISTRATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_REGISTRATION_LIBRARY_DEBUG
+PCL_REGISTRATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SAMPLE_CONSENSUS_INCLUDE_DIR
+PCL_SAMPLE_CONSENSUS_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SAMPLE_CONSENSUS_LIBRARY
+PCL_SAMPLE_CONSENSUS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SAMPLE_CONSENSUS_LIBRARY_DEBUG
+PCL_SAMPLE_CONSENSUS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEARCH_INCLUDE_DIR
+PCL_SEARCH_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEARCH_LIBRARY
+PCL_SEARCH_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEARCH_LIBRARY_DEBUG
+PCL_SEARCH_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEGMENTATION_INCLUDE_DIR
+PCL_SEGMENTATION_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEGMENTATION_LIBRARY
+PCL_SEGMENTATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEGMENTATION_LIBRARY_DEBUG
+PCL_SEGMENTATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_STEREO_INCLUDE_DIR
+PCL_STEREO_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_STEREO_LIBRARY
+PCL_STEREO_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_STEREO_LIBRARY_DEBUG
+PCL_STEREO_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SURFACE_INCLUDE_DIR
+PCL_SURFACE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SURFACE_LIBRARY
+PCL_SURFACE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SURFACE_LIBRARY_DEBUG
+PCL_SURFACE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_TRACKING_INCLUDE_DIR
+PCL_TRACKING_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_TRACKING_LIBRARY
+PCL_TRACKING_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_TRACKING_LIBRARY_DEBUG
+PCL_TRACKING_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_VISUALIZATION_INCLUDE_DIR
+PCL_VISUALIZATION_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_VISUALIZATION_LIBRARY
+PCL_VISUALIZATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_VISUALIZATION_LIBRARY_DEBUG
+PCL_VISUALIZATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+PC_EIGEN_CFLAGS:INTERNAL=-I/Users/christina/miniconda3/envs/ROS/include/eigen3
+PC_EIGEN_CFLAGS_I:INTERNAL=
+PC_EIGEN_CFLAGS_OTHER:INTERNAL=
+PC_EIGEN_FOUND:INTERNAL=1
+PC_EIGEN_INCLUDEDIR:INTERNAL=
+PC_EIGEN_INCLUDE_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/include/eigen3
+PC_EIGEN_LDFLAGS:INTERNAL=
+PC_EIGEN_LDFLAGS_OTHER:INTERNAL=
+PC_EIGEN_LIBDIR:INTERNAL=
+PC_EIGEN_LIBRARIES:INTERNAL=
+PC_EIGEN_LIBRARY_DIRS:INTERNAL=
+PC_EIGEN_LIBS:INTERNAL=
+PC_EIGEN_LIBS_L:INTERNAL=
+PC_EIGEN_LIBS_OTHER:INTERNAL=
+PC_EIGEN_LIBS_PATHS:INTERNAL=
+PC_EIGEN_MODULE_NAME:INTERNAL=eigen3
+PC_EIGEN_PREFIX:INTERNAL=/Users/christina/miniconda3/envs/ROS
+PC_EIGEN_STATIC_CFLAGS:INTERNAL=-I/Users/christina/miniconda3/envs/ROS/include/eigen3
+PC_EIGEN_STATIC_CFLAGS_I:INTERNAL=
+PC_EIGEN_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_EIGEN_STATIC_INCLUDE_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/include/eigen3
+PC_EIGEN_STATIC_LDFLAGS:INTERNAL=
+PC_EIGEN_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_EIGEN_STATIC_LIBDIR:INTERNAL=
+PC_EIGEN_STATIC_LIBRARIES:INTERNAL=
+PC_EIGEN_STATIC_LIBRARY_DIRS:INTERNAL=
+PC_EIGEN_STATIC_LIBS:INTERNAL=
+PC_EIGEN_STATIC_LIBS_L:INTERNAL=
+PC_EIGEN_STATIC_LIBS_OTHER:INTERNAL=
+PC_EIGEN_STATIC_LIBS_PATHS:INTERNAL=
+PC_EIGEN_VERSION:INTERNAL=3.4.0
+PC_EIGEN_eigen3_INCLUDEDIR:INTERNAL=
+PC_EIGEN_eigen3_LIBDIR:INTERNAL=
+PC_EIGEN_eigen3_PREFIX:INTERNAL=
+PC_EIGEN_eigen3_VERSION:INTERNAL=
+PC_EXPAT_CFLAGS:INTERNAL=-I/Users/christina/miniconda3/envs/ROS/include
+PC_EXPAT_CFLAGS_I:INTERNAL=
+PC_EXPAT_CFLAGS_OTHER:INTERNAL=
+PC_EXPAT_FOUND:INTERNAL=1
+PC_EXPAT_INCLUDEDIR:INTERNAL=/Users/christina/miniconda3/envs/ROS/include
+PC_EXPAT_INCLUDE_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/include
+PC_EXPAT_LDFLAGS:INTERNAL=-L/Users/christina/miniconda3/envs/ROS/lib;-lexpat
+PC_EXPAT_LDFLAGS_OTHER:INTERNAL=
+PC_EXPAT_LIBDIR:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+PC_EXPAT_LIBRARIES:INTERNAL=expat
+PC_EXPAT_LIBRARY_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+PC_EXPAT_LIBS:INTERNAL=
+PC_EXPAT_LIBS_L:INTERNAL=
+PC_EXPAT_LIBS_OTHER:INTERNAL=
+PC_EXPAT_LIBS_PATHS:INTERNAL=
+PC_EXPAT_MODULE_NAME:INTERNAL=expat
+PC_EXPAT_PREFIX:INTERNAL=/Users/christina/miniconda3/envs/ROS
+PC_EXPAT_STATIC_CFLAGS:INTERNAL=-I/Users/christina/miniconda3/envs/ROS/include
+PC_EXPAT_STATIC_CFLAGS_I:INTERNAL=
+PC_EXPAT_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_EXPAT_STATIC_INCLUDE_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/include
+PC_EXPAT_STATIC_LDFLAGS:INTERNAL=-L/Users/christina/miniconda3/envs/ROS/lib;-lexpat
+PC_EXPAT_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_EXPAT_STATIC_LIBDIR:INTERNAL=
+PC_EXPAT_STATIC_LIBRARIES:INTERNAL=expat
+PC_EXPAT_STATIC_LIBRARY_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+PC_EXPAT_STATIC_LIBS:INTERNAL=
+PC_EXPAT_STATIC_LIBS_L:INTERNAL=
+PC_EXPAT_STATIC_LIBS_OTHER:INTERNAL=
+PC_EXPAT_STATIC_LIBS_PATHS:INTERNAL=
+PC_EXPAT_VERSION:INTERNAL=2.6.2
+PC_EXPAT_expat_INCLUDEDIR:INTERNAL=
+PC_EXPAT_expat_LIBDIR:INTERNAL=
+PC_EXPAT_expat_PREFIX:INTERNAL=
+PC_EXPAT_expat_VERSION:INTERNAL=
+PC_FLANN_CFLAGS:INTERNAL=-I/Users/christina/miniconda3/envs/ROS/include
+PC_FLANN_CFLAGS_I:INTERNAL=
+PC_FLANN_CFLAGS_OTHER:INTERNAL=
+PC_FLANN_FOUND:INTERNAL=1
+PC_FLANN_INCLUDEDIR:INTERNAL=/Users/christina/miniconda3/envs/ROS/include
+PC_FLANN_INCLUDE_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/include
+PC_FLANN_LDFLAGS:INTERNAL=-L/Users/christina/miniconda3/envs/ROS/lib;-lflann;-lflann_cpp
+PC_FLANN_LDFLAGS_OTHER:INTERNAL=
+PC_FLANN_LIBDIR:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+PC_FLANN_LIBRARIES:INTERNAL=flann;flann_cpp
+PC_FLANN_LIBRARY_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+PC_FLANN_LIBS:INTERNAL=
+PC_FLANN_LIBS_L:INTERNAL=
+PC_FLANN_LIBS_OTHER:INTERNAL=
+PC_FLANN_LIBS_PATHS:INTERNAL=
+PC_FLANN_MODULE_NAME:INTERNAL=flann
+PC_FLANN_PREFIX:INTERNAL=/Users/christina/miniconda3/envs/ROS
+PC_FLANN_STATIC_CFLAGS:INTERNAL=-I/Users/christina/miniconda3/envs/ROS/include
+PC_FLANN_STATIC_CFLAGS_I:INTERNAL=
+PC_FLANN_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_FLANN_STATIC_INCLUDE_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/include
+PC_FLANN_STATIC_LDFLAGS:INTERNAL=-L/Users/christina/miniconda3/envs/ROS/lib;-lflann;-lflann_cpp
+PC_FLANN_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_FLANN_STATIC_LIBDIR:INTERNAL=
+PC_FLANN_STATIC_LIBRARIES:INTERNAL=flann;flann_cpp
+PC_FLANN_STATIC_LIBRARY_DIRS:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+PC_FLANN_STATIC_LIBS:INTERNAL=
+PC_FLANN_STATIC_LIBS_L:INTERNAL=
+PC_FLANN_STATIC_LIBS_OTHER:INTERNAL=
+PC_FLANN_STATIC_LIBS_PATHS:INTERNAL=
+PC_FLANN_VERSION:INTERNAL=1.9.1
+PC_FLANN_flann_INCLUDEDIR:INTERNAL=
+PC_FLANN_flann_LIBDIR:INTERNAL=
+PC_FLANN_flann_PREFIX:INTERNAL=
+PC_FLANN_flann_VERSION:INTERNAL=
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python3.9/site-packages
+//ADVANCED property for variable: TIFF_INCLUDE_DIR
+TIFF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TIFF_LIBRARY_DEBUG
+TIFF_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TIFF_LIBRARY_RELEASE
+TIFF_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Number of processors available to run parallel tests.
+VTK_MPI_NUMPROCS:INTERNAL=2
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+__pkg_config_arguments_PC_EIGEN:INTERNAL=eigen3
+__pkg_config_arguments_PC_EXPAT:INTERNAL=QUIET;expat
+__pkg_config_arguments_PC_FLANN:INTERNAL=flann
+__pkg_config_checked_PC_EIGEN:INTERNAL=1
+__pkg_config_checked_PC_EXPAT:INTERNAL=1
+__pkg_config_checked_PC_FLANN:INTERNAL=1
+//ADVANCED property for variable: boost_atomic_DIR
+boost_atomic_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_date_time_DIR
+boost_date_time_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_filesystem_DIR
+boost_filesystem_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_headers_DIR
+boost_headers_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_iostreams_DIR
+boost_iostreams_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_system_DIR
+boost_system_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: double-conversion_INCLUDE_DIR
+double-conversion_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: double-conversion_LIBRARY
+double-conversion_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_EXPAT_expat
+pkgcfg_lib_PC_EXPAT_expat-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_FLANN_flann
+pkgcfg_lib_PC_FLANN_flann-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_FLANN_flann_cpp
+pkgcfg_lib_PC_FLANN_flann_cpp-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/Users/christina/miniconda3/envs/ROS/lib
+//ADVANCED property for variable: utf8cpp_INCLUDE_DIR
+utf8cpp_INCLUDE_DIR-ADVANCED:INTERNAL=1
 

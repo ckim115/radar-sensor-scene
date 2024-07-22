@@ -16,11 +16,16 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_geometry_msgs
   tf2_ros
   urdf
+  pcl_conversions
+  pcl_ros
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
+find_package(PCL REQUIRED)
+include_directories(  ${catkin_INCLUDE_DIRS}  ${PCL_INCLUDE_DIRS} )
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -228,6 +233,9 @@ target_link_libraries(${PROJECT_NAME}_node
 
 add_executable(listener src/node_listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
+
+add_executable(pcl_listener src/pcl_listener.cpp)
+target_link_libraries(pcl_listener ${catkin_LIBRARIES})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

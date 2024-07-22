@@ -13,8 +13,32 @@
 #include <vector>
 #include <numeric>
 
-// TODO: More detailed random point generation; currently looks for the closest object and determines from there
-    // maybe compare the position of all objects facing the vehicle with each other, randomly choose one, then check the height of all objects between it and the vehicle?
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+#include <pcl_ros/point_cloud.h>
+#include <pcl_conversions/pcl_conversions.h>
+
+struct RadarPoint
+{
+  PCL_ADD_POINT4D;
+  float range;
+  float azimuth;
+  float elevation;
+  float vrel_rad;  // Doppler velocity
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+};
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(RadarPoint,
+                                  (float, x, x)
+                                  (float, y, y)
+                                  (float, z, z)
+                                  (float, range, range)
+                                  (float, azimuth, azimuth)
+                                  (float, elevation, elevation)
+                                  (float, vrel_rad, vrel_rad));
+ros::Publisher pcl_pub;
+pcl::PointCloud<RadarPoint> pointcloud;
+
 struct Vehicle
 {
     double x {}, y {}, z {}; //x y z
@@ -70,7 +94,7 @@ void generate_marker() {
     vis_pub.publish(marker);
 }
 
-//With a dot product, if we treat the two vectors as directions, then a value less than 0 means that v1 is behind v2
+//With a dot product, if we treat the two vectors as directions can determine if they face each other or not
 double in_view(std::vector<double> v1, std::vector<double> v2) {
     //unitize the vectors to get direction vectors
     double length = 0;
@@ -78,17 +102,20 @@ double in_view(std::vector<double> v1, std::vector<double> v2) {
     length = sqrt(length);
     std::vector<double> new_v1{};
     for(double i : v1) new_v1.push_back(i/length);
-    ROS_INFO("vehicle_v: <%f, %f, %f>", v1[0], v1[1], v1[2]);
+    //ROS_INFO("vehicle_v: <%f, %f, %f>", v1[0], v1[1], v1[2]);
     
     length = 0;
     for(double i : v2) length += pow(i,2);
     length = sqrt(length);
     std::vector<double> new_v2{};
     for(double i : v2) new_v2.push_back(i/length);
-    ROS_INFO("plane_v: <%f, %f, %f>", v2[0], v2[1], v2[2]);
+    //ROS_INFO("plane_v: <%f, %f, %f>", v2[0], v2[1], v2[2]);
     
-    double dotProduct = inner_product(new_v1.begin(), new_v1.end(), new_v2.begin(), 0);
-    ROS_INFO("Dot Prod: %f", dotProduct);
+    double dotProduct = 0;
+    for(int i = 0; i < v1.size(); i++) {
+        dotProduct += v1[i]*v2[i];
+    }
+    //ROS_INFO("Dot Prod: %f", dotProduct);
     return dotProduct;
 }
 
@@ -106,13 +133,13 @@ void gen_rand_num(Obstacle o, Plane p) {
     std::uniform_real_distribution<double> genx(o.x - o.w/2, o.x + o.w/2);
     std::uniform_real_distribution<double> geny(o.y - o.l/2, o.y + o.l/2);
     std::uniform_real_distribution<double> genz(-o.h/2, o.h/2);
-    rand_pt.x = p.x; // at nearest edge NOT o.x
+    rand_pt.x = p.x;
     rand_pt.y = p.y;
     rand_pt.z = p.z;
     if(p.x == o.x+o.w/2 || p.x == o.x-o.w/2) {
         rand_pt.y = geny(re);
         rand_pt.z = genz(re);
-    } else if (p.y == o.y+o.l/2 || p.x == o.x-o.l/2) {
+    } else if (p.y == o.y+o.l/2 || p.y == o.y-o.l/2) {
         rand_pt.x = genx(re);
         rand_pt.z = genz(re);
     } else {
@@ -124,12 +151,11 @@ void gen_rand_num(Obstacle o, Plane p) {
 // defines the random points
 bool define_random_point(Obstacle o) {
     std::vector<Plane> visible_planes {};
-    std::vector<double> vehicle_v = {cos(vehicle.orientation), sin(vehicle.orientation), 0};
-    ROS_INFO("start");
+    std::vector<double> obj_v = {vehicle.x - o.x, vehicle.y - o.y};
     std::vector<double> plane_v;
     for(Plane p: o.planes) {
-        plane_v = {p.x - o.x, p.y - o.y, p.z - o.z};
-        if(in_view(vehicle_v, plane_v) < 0) visible_planes.push_back(p);
+        plane_v = {p.x-o.x, p.y-o.y, p.z-o.z};
+        if(in_view(obj_v, plane_v) > 0) visible_planes.push_back(p);
     }
     if(visible_planes.empty()) return false;
     int randIndex = rand()%visible_planes.size();
@@ -151,6 +177,22 @@ void generate_point_information() {
     // Doppler velocity
     double dop_vel = -vehicle.vel_x*cos(azimuth)*cos(elevation)-vehicle.vel_y*sin(azimuth)*cos(elevation)-vehicle.vel_z*sin(elevation);
     
+    RadarPoint point;
+    point.x = rand_pt.x;
+    point.y = rand_pt.y;
+    point.z = rand_pt.z;
+    
+    point.range = range;
+    point.azimuth = azimuth;
+    point.elevation = elevation;
+    point.vrel_rad = dop_vel;  // Doppler velocity
+    
+    pointcloud.push_back(point);
+    
+    pointcloud.header.frame_id = "world";
+    ros::Time time_st = ros::Time::now();
+    pointcloud.header.stamp = time_st.toNSec()/1e3;
+    pcl_pub.publish(pointcloud);
     ROS_INFO("\nrange: %f\nazimuth: %f\nelevation: %f\ndoppler velocity: %f", range, azimuth, elevation, dop_vel);
 }
 
@@ -172,7 +214,7 @@ bool rand_point() {
             // vector of object; always points towards vehicle
             obj_v = {vehicle.x - o.x, vehicle.y - o.y};
             temp_distance = calc_range(vehicle.x, vehicle.y, vehicle.z, o.x, o.y, o.z);
-            if(temp_distance <= min_distance && in_view(vehicle_v, obj_v) >= 0) {
+            if(temp_distance <= min_distance && in_view(vehicle_v, obj_v) > 0) {
                 minObs = o;
                 min_distance = temp_distance;
             }
@@ -180,7 +222,7 @@ bool rand_point() {
         bool exists_point = define_random_point(minObs);
         if(exists_point) {
             ROS_INFO("rand_pos: (%f, %f, %f)", rand_pt.x, rand_pt.y, rand_pt.z);
-            generate_marker();
+            //generate_marker();
             return true;
         }
     }
@@ -255,6 +297,8 @@ int main(int argc, char **argv)
     ros::NodeHandle n("~");
     
     vis_pub = n.advertise<visualization_msgs::Marker>("/visualization_marker", 0 );
+    pcl_pub = n.advertise<pcl::PointCloud<RadarPoint>>("/radar_pointcloud_topic", 0);
+    
     ros::Subscriber sub_vel = n.subscribe("/broadcaster/cmd_vel", 1000, callback_velocity);
     ros::Subscriber sub_vehicle = n.subscribe("/vehicle_position", 10, callback_vehicle);
     ros::Subscriber sub_obj = n.subscribe("/tf_static", 10, callback_obj);

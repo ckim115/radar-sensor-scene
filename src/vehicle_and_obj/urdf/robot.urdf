@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <robot name="fourwheel_robot">
 	<link name="body_link">
+		<parent link="world"/>
 		<visual>
-			<origin rpy="0 0 1.570795" xyz="-3 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
 				<box size="1 0.6 0.3" />
 			</geometry>
@@ -23,7 +24,7 @@
 	</joint>
 	<link name="wheel1_link">
 		<visual>
-			<origin rpy="1.570795 0 1.570795" xyz="-3 0 0"/> <!-- 90 degrees-->
+			<origin rpy="1.570795 0 0" xyz="0 0 0"/> <!-- 90 degrees-->
 			<geometry>
 				<cylinder length="0.1" radius="0.15"/>
 			</geometry>
@@ -43,7 +44,7 @@
 	</joint>
 	<link name="wheel2_link">
 		<visual>
-			<origin rpy="1.570795 0 1.570795" xyz="-3 0 0"/>						<geometry>
+			<origin rpy="1.570795 0 0" xyz="0 0 0"/>						<geometry>
 				<cylinder length="0.1" radius="0.15"/>
 			</geometry>
 
@@ -62,7 +63,7 @@
 	</joint>
 	<link name="wheel3_link">
 		<visual>
-			<origin rpy="1.570795 0 1.393570942" xyz="-3 0 0"/> <!-- 90 degrees-->
+			<origin rpy="1.570795 0 0" xyz="0 0 0"/> <!-- 90 degrees-->
 			<geometry>
 				<cylinder length="0.1" radius="0.15"/>
 			</geometry>
@@ -82,7 +83,7 @@
 	</joint>
 	<link name="wheel4_link">
 		<visual>
-			<origin rpy="1.570795 0 1.348135386" xyz="-3 0 0"/>						<geometry>
+			<origin rpy="1.570795 0 0" xyz="0 0 0"/>						<geometry>
 				<cylinder length="0.1" radius="0.15"/>
 			</geometry>
 
