@@ -26,10 +26,12 @@ private:
     ros::Subscriber _subscriber;
     // Publishers
     ros::Publisher _publisher;
+    ros::Publisher twist_publisher;
     // Transforms
     tf2_ros::TransformBroadcaster tfb;
     geometry_msgs::PoseStamped poseStamped;
     geometry_msgs::Twist twist;
+    geometry_msgs::Twist twistPub;
     double linear_x = 0;
     double linear_y = 0;
     double linear_z = 0;

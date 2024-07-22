@@ -168,6 +168,7 @@ double calc_range(double x1, double y1, double z1, double x2, double y2, double 
 }
 
 void generate_point_information() {
+    ROS_INFO("vehicle velocity: (%f, %f, %f)", vehicle.vel_x, vehicle.vel_y, vehicle.vel_z);
     // Range
     double range = calc_range(vehicle.x, vehicle.y, vehicle.z, rand_pt.x, rand_pt.y, rand_pt.z);
     // Azimuth
@@ -222,7 +223,7 @@ bool rand_point() {
         bool exists_point = define_random_point(minObs);
         if(exists_point) {
             ROS_INFO("rand_pos: (%f, %f, %f)", rand_pt.x, rand_pt.y, rand_pt.z);
-            //generate_marker();
+            generate_marker();
             return true;
         }
     }
@@ -285,10 +286,10 @@ void callback_vehicle(const geometry_msgs::PoseStamped msg)
 // Get velocity of vehicle; required for doppler velocity
 void callback_velocity(const geometry_msgs::Twist& msg)
 {
+    ROS_INFO("callback vehicle velocity: (%f, %f, %f)", vehicle.vel_x, vehicle.vel_y, vehicle.vel_z);
     vehicle.vel_x = msg.linear.x;
     vehicle.vel_y = msg.linear.y;
     vehicle.vel_z = msg.linear.z;
-    ROS_INFO("vehicle velocity: (%f, %f, %f)", vehicle.vel_x, vehicle.vel_y, vehicle.vel_z);
 }
 
 int main(int argc, char **argv)
@@ -299,7 +300,7 @@ int main(int argc, char **argv)
     vis_pub = n.advertise<visualization_msgs::Marker>("/visualization_marker", 0 );
     pcl_pub = n.advertise<pcl::PointCloud<RadarPoint>>("/radar_pointcloud_topic", 0);
     
-    ros::Subscriber sub_vel = n.subscribe("/broadcaster/cmd_vel", 1000, callback_velocity);
+    ros::Subscriber sub_vel = n.subscribe("/vehicle_velocity", 10, callback_velocity);
     ros::Subscriber sub_vehicle = n.subscribe("/vehicle_position", 10, callback_vehicle);
     ros::Subscriber sub_obj = n.subscribe("/tf_static", 10, callback_obj);
     ros::spin();

@@ -33,6 +33,7 @@ Sim_Node::Sim_Node()
     
     // Setup publisher/subscriber: Publish to vehicle position, subscribe to cmd_vel
     _publisher = node.advertise<geometry_msgs::PoseStamped>("/vehicle_position", 10);
+    twist_publisher = node.advertise<geometry_msgs::Twist>("/vehicle_velocity", 10);
     //rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=broadcaster/cmd_vel
     _subscriber = node.subscribe("/broadcaster/cmd_vel", 1000, &Sim_Node::update_position, this);
     
@@ -66,6 +67,14 @@ void Sim_Node::timerCallback(const ros::TimerEvent &event)
         linear_x = dist*cos(angle);
         linear_y = dist*sin(angle);
         
+        twistPub.linear.x = vel*cos(angle);
+        twistPub.linear.y = vel*sin(angle);
+//        twistPub.linear.z = 0;
+//        twistPub.angular.x = 0;
+//        twistPub.angular.y = 0;
+//        twistPub.angular.z = 0;
+        ROS_INFO("vehicle velocity: (%f, %f, %f)", twistPub.linear.x, twistPub.linear.y, twistPub.linear.z);
+        
         angular_x += twist.angular.x*secs;
         angular_y += twist.angular.y*secs;
         angular_z = angle;
@@ -91,6 +100,7 @@ void Sim_Node::timerCallback(const ros::TimerEvent &event)
         
         // Publish tranformation
         _publisher.publish(poseStamped);
+        twist_publisher.publish(twistPub);
         
         // send transform
         tfb.sendTransform(t);
